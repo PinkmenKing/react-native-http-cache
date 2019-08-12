@@ -93,9 +93,9 @@ public class HttpCacheModule extends ReactContextBaseJavaModule {
 
     @ReactMethod
     public void clearImageCache(Promise promise){
-        FileCache cache1 = ImagePipelineFactory.getInstance().getMainFileCache();
+        FileCache cache1 = ImagePipelineFactory.getInstance().getMainDiskStorageCache();
         cache1.clearAll();
-        FileCache cache2 = ImagePipelineFactory.getInstance().getSmallImageFileCache();
+        FileCache cache2 = ImagePipelineFactory.getInstance().getSmallImageDiskStorageCache();
         cache2.clearAll();
         promise.resolve(null);
     }
